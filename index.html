@@ -1,0 +1,72 @@
+<html lang="el"><head><style>body {transition: opacity ease-in 0.2s; } 
+body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relative; } 
+</style>
+  <meta charset="UTF-8">
+ <title>𝕸𝖚𝖘𝖎𝖈🌹𝕮𝖍𝖔𝖎𝖈𝖊𝖘</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  
+<style>
+#bgVideo {
+  width: 100vw;
+  height: 100vh;
+  background: #000;
+  position: fixed;
+  object-fit: cover;
+}
+
+#MuteButton::before {
+    content:  '🔇';
+}
+
+#MuteButton.muted::before {
+    content:  '🔈';
+}
+
+#MuteButton {
+  position: fixed;
+  top: 4rem;
+  right: 1rem;
+  background: rgba(0,0,0,.5);
+  border: none;
+  color: #fff;
+  z-index: 5;
+  font-size: 2rem;
+  border-radius: 2rem;
+  width: 4rem;
+  height: 4rem;
+  line-height: 4rem;
+  text-align: center;
+}
+</style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  
+  
+</head>
+
+<body translate="no">
+  <video id="bgVideo" autoplay="" loop="" muted="" poster="https://xatimg.com/image/WzDGfIoYo042.jpg">
+  <source src="https://livetv.streams.ovh:1936/paniktv/paniktv/playlist.m3u8">
+</video>
+
+<a id="MuteButton" class="muted" onclick="toggleMute();">
+</a>
+  
+    <script id="rendered-js">
+function toggleMute() {
+  var button = document.getElementById("MuteButton");
+  var video = document.getElementById("bgVideo");
+
+  if (video.muted) {
+    video.muted = false;
+  } else {
+    video.muted = true;
+  }
+
+  button.classList.toggle('muted');
+}
+//
+  </script></body></html>
